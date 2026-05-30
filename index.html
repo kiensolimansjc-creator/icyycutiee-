@@ -1,247 +1,341 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>For My Icycutiee ❤️</title>
+
 <style>
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Segoe UI',sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
 }
+
 body{
-    background:linear-gradient(135deg,#ffe6f0,#fff5f8);
-    overflow-x:hidden;
-    color:#333;
+    background:linear-gradient(135deg,#ffe6f0,#fff5f8);
+    color:#333;
+    overflow-x:hidden;
 }
+
+/* HERO */
+
 .hero{
-    height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:20px;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
 }
+
 .hero h1{
-    font-size:4rem;
-    color:#ff4d88;
+    font-size:clamp(2.5rem,8vw,4.5rem);
+    color:#ff4d88;
+    margin-bottom:15px;
 }
+
 .hero p{
-    margin-top:15px;
-    font-size:1.2rem;
+    font-size:1.1rem;
+    line-height:1.8;
 }
+
 .scroll-btn{
-    margin-top:30px;
-    padding:15px 30px;
-    border:none;
-    border-radius:50px;
-    background:#ff4d88;
-    color:white;
-    cursor:pointer;
-    font-size:1rem;
+    margin-top:30px;
+    padding:15px 30px;
+    border:none;
+    border-radius:50px;
+    background:#ff4d88;
+    color:white;
+    font-size:1rem;
+    cursor:pointer;
+    transition:.3s;
 }
+
+.scroll-btn:hover{
+    transform:scale(1.05);
+}
+
+/* SECTION */
+
 .section{
-    max-width:1100px;
-    margin:auto;
-    padding:70px 20px;
+    max-width:1100px;
+    margin:auto;
+    padding:80px 20px;
 }
+
 .section h2{
-    text-align:center;
-    color:#ff4d88;
-    margin-bottom:40px;
+    text-align:center;
+    color:#ff4d88;
+    margin-bottom:40px;
+    font-size:2rem;
 }
+
+/* GALLERY */
+
 .gallery{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
 }
+
 .gallery img{
-    width:100%;
-    height:350px;
-    object-fit:cover;
-    border-radius:20px;
-    box-shadow:0 10px 25px rgba(0,0,0,.1);
-    transition:.4s;
+    width:100%;
+    height:350px;
+    object-fit:cover;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.1);
+    transition:.4s;
 }
+
 .gallery img:hover{
-    transform:scale(1.03);
+    transform:scale(1.03);
 }
+
+/* LETTER */
+
 .letter{
-    background:white;
-    padding:40px;
-    border-radius:25px;
-    line-height:2;
-    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    background: black;
+    padding:35px;
+    border-radius:25px;
+    line-height:2;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    font-size:1rem;
 }
+
+/* FINAL BUTTON */
+
 .final{
-    text-align:center;
-    margin-top:50px;
+    text-align:center;
+    margin-top:50px;
 }
+
 .final button{
-    padding:18px 35px;
-    border:none;
-    background:#ff4d88;
-    color:white;
-    border-radius:50px;
-    cursor:pointer;
-    font-size:1rem;
+    padding:18px 35px;
+    border:none;
+    border-radius:50px;
+    background:#ff4d88;
+    color:white;
+    cursor:pointer;
+    font-size:1rem;
 }
+
+/* POPUP */
+
 .popup{
-    display:none;
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,.6);
-    justify-content:center;
-    align-items:center;
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.6);
+    justify-content:center;
+    align-items:center;
+    z-index:999;
 }
+
 .popup-content{
-    background:white;
-    width:90%;
-    max-width:500px;
-    padding:40px;
-    border-radius:20px;
-    text-align:center;
+    background:white;
+    width:90%;
+    max-width:500px;
+    padding:40px;
+    border-radius:20px;
+    text-align:center;
 }
+
 .popup-content h3{
-    color:#ff4d88;
-    margin-bottom:15px;
+    color:#ff4d88;
+    margin-bottom:15px;
 }
+
 .popup-content button{
-    margin-top:20px;
-    padding:12px 25px;
-    border:none;
-    background:#ff4d88;
-    color:white;
-    border-radius:40px;
+    margin-top:20px;
+    padding:12px 25px;
+    border:none;
+    border-radius:40px;
+    background:#ff4d88;
+    color:white;
 }
+
+/* FLOATING HEARTS */
+
 .heart{
-    position:fixed;
-    font-size:20px;
-    animation:float linear infinite;
-    opacity:.5;
+    position:fixed;
+    bottom:-50px;
+    color:#ff4d88;
+    pointer-events:none;
+    opacity:.25;
+    z-index:-1;
+    animation:float linear infinite;
 }
+
 @keyframes float{
-    from{
-        transform:translateY(100vh);
-    }
-    to{
-        transform:translateY(-120px);
-    }
+    from{
+        transform:translateY(0);
+    }
+    to{
+        transform:translateY(-120vh);
+    }
 }
+
 footer{
-    text-align:center;
-    padding:40px;
-    color:#666;
+    text-align:center;
+    padding:40px;
+    color:#666;
 }
 </style>
 </head>
+
 <body>
-<!-- MUSIC -->
-<audio autoplay loop>
-    <source src=https://youtu.be/C8cpR3RqPyc?si=SNqUbbbGgIGuGN1K type="audio/mpeg">
-</audio>
+
 <section class="hero">
-    <h1>For My Icycutiee ❤️</h1>
-    <p>
-        A small website made by Natoyy<br>
-        because "sorry" deserves more than a text message.
-    </p>
-    <button class="scroll-btn"
-    onclick="document.getElementById('gallery').scrollIntoView({behavior:'smooth'})">
-        💌 Read My Heart
-    </button>
+    <h1>For My Icycutiee ❤️</h1>
+
+    <p>
+        A small website made by Natoyy <br>
+        because "sorry" deserves more than a text message.
+    </p>
+
+    <button class="scroll-btn"
+        onclick="document.getElementById('gallery').scrollIntoView({behavior:'smooth'})">
+        💌 Read My Heart
+    </button>
 </section>
+
 <section id="gallery" class="section">
-    <h2>📸 Our Memories</h2>
-    <div class="gallery">
-        <!-- CHANGE THESE FILE NAMES TO YOUR PHOTOS -->
-        <img src="forehead.jpg" alt="">
-        <img src="mcdo1.jpg" alt="">
-        <img src="mcdo2.jpg" alt="">
-        <img src="funny1.jpg" alt="">
-        <img src="funny2.jpg" alt="">
-    </div>
+
+    <h2>📸 Our Memories</h2>
+
+    <div class="gallery">
+        <img src="forehead.jpg">
+        <img src="mcdo1.jpg">
+        <img src="mcdo2.jpg">
+        <img src="funny1.jpg">
+        <img src="funny2.jpg">
+    </div>
+
 </section>
+
 <section class="section">
+
 <h2>💌 My Apology</h2>
+
 <div class="letter">
+
 Hi my lovee ☹️❤️
+
 <br><br>
+
 Sorry sa nangyari kagabi.
 Hindi ko na-control yung emotions ko at alam kong hindi mo naman dapat madamay sa frustration at inis na nararamdaman ko.
+
 <br><br>
+
 Gusto ko lang din ipaliwanag yung side ko, hindi para magdahilan kundi para maintindihan mo yung nangyari.
+
 <br><br>
+
 Yung bike na ginamit ko kagabi ay sira na.
 Habang nagba-bike ako, kailangan ko pang ilagay yung isang kamay ko sa likod para hindi tumunog at para hindi lalong mapudpod yung gulong.
-Hindi ko ito sinasabi para manumbat ah, ayokong maisip mo yun.
-❤️
+
 <br><br>
+
 Nag-bike ako papuntang McDo.
 Pagdating ko doon, nakita ko yung emoji chats mo.
 Dahil sa halo-halong frustration na dala ko na bago pa man ako umalis, lalo akong nainis at napauwi na lang ako.
+
 <br><br>
+
 Pero alam kong kahit ano pa yung dahilan, hindi valid na maipasa ko sa'yo yung galit at emosyon ko.
+
 <br><br>
+
 Alam kong red flag yung naging ugali ko sa part na iyon.
 Hindi ko dapat hinayaang madamay ka sa mga problemang hindi mo naman kasalanan.
+
 <br><br>
+
 I'm so sorry my lovee.
 I'm so sorry bebii. ☹️❤️
+
 <br><br>
+
 Mahal na mahal kita.
-At gusto kong ipakita sa actions ko na kaya kong maging mas mabuti para sa'yo.
-❤️
+At gusto kong ipakita sa actions ko na kaya kong maging mas mabuti para sa'yo. ❤️
+
 </div>
+
 <div class="final">
 <button onclick="openLetter()">
 💌 Click Me, Icycutiee
 </button>
 </div>
+
 </section>
+
 <footer>
 Forever Yours,<br>
 <strong>Natoyy ❤️</strong>
 </footer>
+
 <div class="popup" id="popup">
+
 <div class="popup-content">
+
 <h3>To My Icycutiee ❤️</h3>
+
 <p>
 Kahit galit ka pa,
-ikaw pa rin ang paborito kong tao.
-❤️
+ikaw pa rin ang paborito kong tao. ❤️
+
 <br><br>
+
 At kung bibigyan mo ako ng pagkakataon,
 ipapakita ko sa actions ko yung mga bagay na hindi ko naipakita nang maayos kagabi.
+
 <br><br>
+
 I love you.
+
 <br><br>
+
 - Natoyy ❤️
 </p>
+
 <button onclick="closeLetter()">
 Close
 </button>
+
 </div>
+
 </div>
+
 <script>
+
 function openLetter(){
-document.getElementById('popup').style.display='flex';
+    document.getElementById("popup").style.display="flex";
 }
+
 function closeLetter(){
-document.getElementById('popup').style.display='none';
+    document.getElementById("popup").style.display="none";
 }
-for(let i=0;i<35;i++){
-const heart=document.createElement('div');
-heart.classList.add('heart');
-heart.innerHTML='❤️';
-heart.style.left=Math.random()*100+'vw';
-heart.style.fontSize=(15+Math.random()*25)+'px';
-heart.style.animationDuration=(5+Math.random()*10)+'s';
-document.body.appendChild(heart);
+
+for(let i=0;i<20;i++){
+
+    const heart=document.createElement("div");
+
+    heart.className="heart";
+    heart.innerHTML="❤️";
+
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.fontSize=(15+Math.random()*20)+"px";
+    heart.style.animationDuration=(8+Math.random()*10)+"s";
+
+    document.body.appendChild(heart);
 }
+
 </script>
+
 </body>
-</html> 
+</html>
